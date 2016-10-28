@@ -23,9 +23,11 @@ namespace GUI
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            uCtrlMuonTaiLieu = new UCtrlMuonTaiLieu();
+            FormSQLConfig config = new FormSQLConfig();
+            config.Show();
+            /*uCtrlMuonTaiLieu = new UCtrlMuonTaiLieu();
             uCtrlMuonTaiLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            tabNTrangChu.Controls.Add(uCtrlMuonTaiLieu);
+            tabNTrangChu.Controls.Add(uCtrlMuonTaiLieu);*/
         }
 
         private void barBtnThemDocGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

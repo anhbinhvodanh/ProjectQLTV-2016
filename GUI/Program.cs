@@ -30,7 +30,7 @@ namespace GUI
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new FormTrangChu());
+            Application.Run(new FormSQLConfig());
         }
     }
 }
