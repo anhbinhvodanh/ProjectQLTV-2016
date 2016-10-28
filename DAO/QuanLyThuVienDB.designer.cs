@@ -54,12 +54,12 @@ namespace DAO
     partial void InsertPhieuTra(PhieuTra instance);
     partial void UpdatePhieuTra(PhieuTra instance);
     partial void DeletePhieuTra(PhieuTra instance);
-    partial void InsertTheDocGia(TheDocGia instance);
-    partial void UpdateTheDocGia(TheDocGia instance);
-    partial void DeleteTheDocGia(TheDocGia instance);
     partial void InsertTaiLieu(TaiLieu instance);
     partial void UpdateTaiLieu(TaiLieu instance);
     partial void DeleteTaiLieu(TaiLieu instance);
+    partial void InsertTheDocGia(TheDocGia instance);
+    partial void UpdateTheDocGia(TheDocGia instance);
+    partial void DeleteTheDocGia(TheDocGia instance);
     partial void InsertThuThu(ThuThu instance);
     partial void UpdateThuThu(ThuThu instance);
     partial void DeleteThuThu(ThuThu instance);
@@ -69,7 +69,7 @@ namespace DAO
     #endregion
 		
 		public QuanLyThuVienDBDataContext() : 
-				base(global::DAO.Properties.Settings.Default.THUVIENConnectionString, mappingSource)
+				base(global::DAO.Properties.Settings.Default.THUVIENConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -162,19 +162,19 @@ namespace DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<TheDocGia> TheDocGias
-		{
-			get
-			{
-				return this.GetTable<TheDocGia>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TaiLieu> TaiLieus
 		{
 			get
 			{
 				return this.GetTable<TaiLieu>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TheDocGia> TheDocGias
+		{
+			get
+			{
+				return this.GetTable<TheDocGia>();
 			}
 		}
 		
@@ -1841,133 +1841,6 @@ namespace DAO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TheDocGia")]
-	public partial class TheDocGia : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _maDocGia;
-		
-		private System.Nullable<System.DateTime> _ngayTaoThe;
-		
-		private EntityRef<DocGia> _DocGia;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnmaDocGiaChanging(int value);
-    partial void OnmaDocGiaChanged();
-    partial void OnngayTaoTheChanging(System.Nullable<System.DateTime> value);
-    partial void OnngayTaoTheChanged();
-    #endregion
-		
-		public TheDocGia()
-		{
-			this._DocGia = default(EntityRef<DocGia>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDocGia", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int maDocGia
-		{
-			get
-			{
-				return this._maDocGia;
-			}
-			set
-			{
-				if ((this._maDocGia != value))
-				{
-					if (this._DocGia.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmaDocGiaChanging(value);
-					this.SendPropertyChanging();
-					this._maDocGia = value;
-					this.SendPropertyChanged("maDocGia");
-					this.OnmaDocGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayTaoThe", DbType="Date")]
-		public System.Nullable<System.DateTime> ngayTaoThe
-		{
-			get
-			{
-				return this._ngayTaoThe;
-			}
-			set
-			{
-				if ((this._ngayTaoThe != value))
-				{
-					this.OnngayTaoTheChanging(value);
-					this.SendPropertyChanging();
-					this._ngayTaoThe = value;
-					this.SendPropertyChanged("ngayTaoThe");
-					this.OnngayTaoTheChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocGia_TheDocGia", Storage="_DocGia", ThisKey="maDocGia", OtherKey="maDocGia", IsForeignKey=true)]
-		public DocGia DocGia
-		{
-			get
-			{
-				return this._DocGia.Entity;
-			}
-			set
-			{
-				DocGia previousValue = this._DocGia.Entity;
-				if (((previousValue != value) 
-							|| (this._DocGia.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DocGia.Entity = null;
-						previousValue.TheDocGia = null;
-					}
-					this._DocGia.Entity = value;
-					if ((value != null))
-					{
-						value.TheDocGia = this;
-						this._maDocGia = value.maDocGia;
-					}
-					else
-					{
-						this._maDocGia = default(int);
-					}
-					this.SendPropertyChanged("DocGia");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TaiLieu")]
 	public partial class TaiLieu : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1978,7 +1851,7 @@ namespace DAO
 		
 		private System.Nullable<int> _maLoaiTaiLieu;
 		
-		private string _tenLoai;
+		private string _tenTaiLieu;
 		
 		private System.Nullable<bool> _hide;
 		
@@ -1996,8 +1869,8 @@ namespace DAO
     partial void OnmaTaiLieuChanged();
     partial void OnmaLoaiTaiLieuChanging(System.Nullable<int> value);
     partial void OnmaLoaiTaiLieuChanged();
-    partial void OntenLoaiChanging(string value);
-    partial void OntenLoaiChanged();
+    partial void OntenTaiLieuChanging(string value);
+    partial void OntenTaiLieuChanged();
     partial void OnhideChanging(System.Nullable<bool> value);
     partial void OnhideChanged();
     #endregion
@@ -2054,22 +1927,22 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenLoai", DbType="NVarChar(250)")]
-		public string tenLoai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenTaiLieu", DbType="NVarChar(250)")]
+		public string tenTaiLieu
 		{
 			get
 			{
-				return this._tenLoai;
+				return this._tenTaiLieu;
 			}
 			set
 			{
-				if ((this._tenLoai != value))
+				if ((this._tenTaiLieu != value))
 				{
-					this.OntenLoaiChanging(value);
+					this.OntenTaiLieuChanging(value);
 					this.SendPropertyChanging();
-					this._tenLoai = value;
-					this.SendPropertyChanged("tenLoai");
-					this.OntenLoaiChanged();
+					this._tenTaiLieu = value;
+					this.SendPropertyChanged("tenTaiLieu");
+					this.OntenTaiLieuChanged();
 				}
 			}
 		}
@@ -2196,6 +2069,133 @@ namespace DAO
 		{
 			this.SendPropertyChanging();
 			entity.TaiLieu = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TheDocGia")]
+	public partial class TheDocGia : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _maDocGia;
+		
+		private System.Nullable<System.DateTime> _ngayTaoThe;
+		
+		private EntityRef<DocGia> _DocGia;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmaDocGiaChanging(int value);
+    partial void OnmaDocGiaChanged();
+    partial void OnngayTaoTheChanging(System.Nullable<System.DateTime> value);
+    partial void OnngayTaoTheChanged();
+    #endregion
+		
+		public TheDocGia()
+		{
+			this._DocGia = default(EntityRef<DocGia>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDocGia", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int maDocGia
+		{
+			get
+			{
+				return this._maDocGia;
+			}
+			set
+			{
+				if ((this._maDocGia != value))
+				{
+					if (this._DocGia.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaDocGiaChanging(value);
+					this.SendPropertyChanging();
+					this._maDocGia = value;
+					this.SendPropertyChanged("maDocGia");
+					this.OnmaDocGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayTaoThe", DbType="Date")]
+		public System.Nullable<System.DateTime> ngayTaoThe
+		{
+			get
+			{
+				return this._ngayTaoThe;
+			}
+			set
+			{
+				if ((this._ngayTaoThe != value))
+				{
+					this.OnngayTaoTheChanging(value);
+					this.SendPropertyChanging();
+					this._ngayTaoThe = value;
+					this.SendPropertyChanged("ngayTaoThe");
+					this.OnngayTaoTheChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocGia_TheDocGia", Storage="_DocGia", ThisKey="maDocGia", OtherKey="maDocGia", IsForeignKey=true)]
+		public DocGia DocGia
+		{
+			get
+			{
+				return this._DocGia.Entity;
+			}
+			set
+			{
+				DocGia previousValue = this._DocGia.Entity;
+				if (((previousValue != value) 
+							|| (this._DocGia.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DocGia.Entity = null;
+						previousValue.TheDocGia = null;
+					}
+					this._DocGia.Entity = value;
+					if ((value != null))
+					{
+						value.TheDocGia = this;
+						this._maDocGia = value.maDocGia;
+					}
+					else
+					{
+						this._maDocGia = default(int);
+					}
+					this.SendPropertyChanged("DocGia");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

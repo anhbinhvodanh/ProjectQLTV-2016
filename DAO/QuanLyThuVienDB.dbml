@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="THUVIEN" Class="QuanLyThuVienDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=BICHAN\SQLEXPRESS;Initial Catalog=THUVIEN;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="THUVIENConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=BICHANC\SQLEXPRESS;Initial Catalog=THUVIEN;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="THUVIENConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietMuon" Member="ChiTietMuons">
     <Type Name="ChiTietMuon">
       <Column Name="maChiTietMuon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -79,22 +79,22 @@
       <Association Name="ThuThu_PhieuTra" Member="ThuThu" ThisKey="maThuThu" OtherKey="maThuThu" Type="ThuThu" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TaiLieu" Member="TaiLieus">
+    <Type Name="TaiLieu">
+      <Column Name="maTaiLieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maLoaiTaiLieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tenTaiLieu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="hide" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TaiLieu_ChiTietMuon" Member="ChiTietMuons" ThisKey="maTaiLieu" OtherKey="maTaiLieu" Type="ChiTietMuon" />
+      <Association Name="TaiLieu_DatMuonTaiLieu" Member="DatMuonTaiLieus" ThisKey="maTaiLieu" OtherKey="maTaiLieu" Type="DatMuonTaiLieu" />
+      <Association Name="LoaiTaiLieu_TaiLieu" Member="LoaiTaiLieu" ThisKey="maLoaiTaiLieu" OtherKey="maLoaiTaiLieu" Type="LoaiTaiLieu" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.TheDocGia" Member="TheDocGias">
     <Type Name="TheDocGia">
       <Column Name="maDocGia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ngayTaoThe" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="DocGia_TheDocGia" Member="DocGia" ThisKey="maDocGia" OtherKey="maDocGia" Type="DocGia" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TaiLieu" Member="TaiLieus">
-    <Type Name="TaiLieu">
-      <Column Name="maTaiLieu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="maLoaiTaiLieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="tenLoai" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="hide" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="TaiLieu_ChiTietMuon" Member="ChiTietMuons" ThisKey="maTaiLieu" OtherKey="maTaiLieu" Type="ChiTietMuon" />
-      <Association Name="TaiLieu_DatMuonTaiLieu" Member="DatMuonTaiLieus" ThisKey="maTaiLieu" OtherKey="maTaiLieu" Type="DatMuonTaiLieu" />
-      <Association Name="LoaiTaiLieu_TaiLieu" Member="LoaiTaiLieu" ThisKey="maLoaiTaiLieu" OtherKey="maLoaiTaiLieu" Type="LoaiTaiLieu" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ThuThu" Member="ThuThus">
