@@ -64,7 +64,7 @@
             this.ribbonPage1,
             this.ribbonPage2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
-            this.ribbonControl1.Size = new System.Drawing.Size(838, 133);
+            this.ribbonControl1.Size = new System.Drawing.Size(786, 134);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // barBtnThemDocGia
@@ -131,26 +131,26 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 628);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 576);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(838, 21);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(786, 23);
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Light";
             // 
             // tabPaneTrangChu
             // 
             this.tabPaneTrangChu.Controls.Add(this.tabNTrangChu);
             this.tabPaneTrangChu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPaneTrangChu.Location = new System.Drawing.Point(0, 133);
+            this.tabPaneTrangChu.Location = new System.Drawing.Point(0, 134);
             this.tabPaneTrangChu.Name = "tabPaneTrangChu";
             this.tabPaneTrangChu.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNTrangChu});
-            this.tabPaneTrangChu.RegularSize = new System.Drawing.Size(838, 495);
+            this.tabPaneTrangChu.RegularSize = new System.Drawing.Size(786, 442);
             this.tabPaneTrangChu.SelectedPage = this.tabNTrangChu;
-            this.tabPaneTrangChu.Size = new System.Drawing.Size(838, 495);
+            this.tabPaneTrangChu.Size = new System.Drawing.Size(786, 442);
             this.tabPaneTrangChu.TabIndex = 2;
             this.tabPaneTrangChu.Text = "tabPane1";
             // 
@@ -158,18 +158,16 @@
             // 
             this.tabNTrangChu.Caption = "Trang chủ";
             this.tabNTrangChu.Name = "tabNTrangChu";
-            this.tabNTrangChu.Size = new System.Drawing.Size(820, 451);
+            this.tabNTrangChu.Size = new System.Drawing.Size(766, 397);
             // 
             // FormTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 649);
+            this.ClientSize = new System.Drawing.Size(786, 599);
             this.Controls.Add(this.tabPaneTrangChu);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "FormTrangChu";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

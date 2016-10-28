@@ -23,7 +23,9 @@ namespace GUI
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            tabNTrangChu.Controls.Add(new UCtrlMuonTaiLieu());
+            uCtrlMuonTaiLieu = new UCtrlMuonTaiLieu();
+            uCtrlMuonTaiLieu.Dock = System.Windows.Forms.DockStyle.Fill;
+            tabNTrangChu.Controls.Add(uCtrlMuonTaiLieu);
         }
 
         private void barBtnThemDocGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -39,6 +41,7 @@ namespace GUI
             if(uCtrlTaoTheDocGia == null)
             {
                 uCtrlTaoTheDocGia = new UCtrlTaoTheDocGia();
+                uCtrlTaoTheDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
             }
 
             tabNTrangChu.Controls.Clear();
@@ -50,6 +53,7 @@ namespace GUI
             if (uCtrlHuyTheDocGia == null)
             {
                 uCtrlHuyTheDocGia = new UCtrlHuyTheDocGia();
+                uCtrlHuyTheDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
             }
 
             tabNTrangChu.Controls.Clear();
