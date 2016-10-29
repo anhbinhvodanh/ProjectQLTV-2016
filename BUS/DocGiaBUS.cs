@@ -74,5 +74,15 @@ namespace BUS
         {
             return new DocGiaDAO().getAllDocGiaBiHuyThe();
         }
+
+        /// <summary>
+        /// Lay thong tin doc gia
+        /// </summary>
+        /// <param name="maDocGia"></param>
+        /// <returns></returns>
+        public DocGiaDTO layDocGia(int maDocGia)
+        {
+            return new DocGiaDAO().layDocGia(maDocGia);
+        }
     }
 }

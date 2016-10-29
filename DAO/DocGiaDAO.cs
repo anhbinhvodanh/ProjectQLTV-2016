@@ -142,5 +142,22 @@ namespace DAO
             return docGias.ToList<DocGiaDTO>();
         }
         
+        /// <summary>
+        /// Lay thong tin doc gia
+        /// </summary>
+        /// <param name="maDocGia"></param>
+        /// <returns></returns>
+        public DocGiaDTO layDocGia(int maDocGia)
+        {
+            var docGia = db.getDBContext().DocGias.Where(s => s.maDocGia == maDocGia).FirstOrDefault();
+            return new DocGiaDTO
+            {
+                maDocGia = docGia.maDocGia,
+                tenDocGia = docGia.tenDocGia,
+                ngaySinh = Convert.ToDateTime(docGia.ngaySinh),
+                cmnd = Convert.ToInt32(docGia.cmnd),
+                hide = Convert.ToBoolean(docGia.hide == null ? false : true)
+            };
+        }
     }
 }

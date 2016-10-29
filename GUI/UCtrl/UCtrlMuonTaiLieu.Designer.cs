@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txbTenDocGia = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtbNgayMuon = new DevExpress.XtraEditors.DateEdit();
             this.grdTaiLieuKho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmaTaiLieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenTaiLieu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,7 +74,6 @@
             this.coltenDocGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcmnd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gCtrlDocGia = new DevExpress.XtraGrid.GridControl();
-            this.docGiaDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -82,7 +82,6 @@
             this.pnTheMuon = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dtbNgayMuon = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTaiLieuMuon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCtrlTaiLieuMuon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiLieuDTOBindingSource)).BeginInit();
@@ -92,6 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txbTenDocGia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtbNgayMuon.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtbNgayMuon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTaiLieuKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCtrlTaiLieuKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
@@ -111,7 +112,6 @@
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCtrlDocGia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docGiaDTOBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -125,8 +125,6 @@
             this.pnTheMuon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtbNgayMuon.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtbNgayMuon.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton4
@@ -203,7 +201,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(202, 31);
+            this.labelControl4.Location = new System.Drawing.Point(202, 32);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(59, 13);
             this.labelControl4.TabIndex = 1;
@@ -211,7 +209,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(5, 31);
+            this.labelControl3.Location = new System.Drawing.Point(5, 32);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(61, 13);
             this.labelControl3.TabIndex = 0;
@@ -245,7 +243,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(199, 61);
+            this.label2.Location = new System.Drawing.Point(199, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 6;
@@ -262,11 +260,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 61);
+            this.label1.Location = new System.Drawing.Point(3, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tên độc giả:";
+            // 
+            // dtbNgayMuon
+            // 
+            this.dtbNgayMuon.EditValue = null;
+            this.dtbNgayMuon.Enabled = false;
+            this.dtbNgayMuon.Location = new System.Drawing.Point(267, 28);
+            this.dtbNgayMuon.Name = "dtbNgayMuon";
+            this.dtbNgayMuon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtbNgayMuon.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtbNgayMuon.Properties.DisplayFormat.FormatString = "";
+            this.dtbNgayMuon.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtbNgayMuon.Properties.EditFormat.FormatString = "";
+            this.dtbNgayMuon.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtbNgayMuon.Size = new System.Drawing.Size(124, 20);
+            this.dtbNgayMuon.TabIndex = 3;
             // 
             // grdTaiLieuKho
             // 
@@ -502,7 +517,6 @@
             // 
             // gCtrlDocGia
             // 
-            this.gCtrlDocGia.DataSource = this.docGiaDTOBindingSource1;
             this.gCtrlDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gCtrlDocGia.Location = new System.Drawing.Point(2, 20);
             this.gCtrlDocGia.MainView = this.grdDocGia;
@@ -511,10 +525,6 @@
             this.gCtrlDocGia.TabIndex = 0;
             this.gCtrlDocGia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdDocGia});
-            // 
-            // docGiaDTOBindingSource1
-            // 
-            this.docGiaDTOBindingSource1.DataSource = typeof(DTO.DocGiaDTO);
             // 
             // groupControl1
             // 
@@ -597,20 +607,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dtbNgayMuon
-            // 
-            this.dtbNgayMuon.EditValue = null;
-            this.dtbNgayMuon.Location = new System.Drawing.Point(267, 28);
-            this.dtbNgayMuon.Name = "dtbNgayMuon";
-            this.dtbNgayMuon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtbNgayMuon.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtbNgayMuon.Properties.DisplayFormat.FormatString = "";
-            this.dtbNgayMuon.Properties.EditFormat.FormatString = "";
-            this.dtbNgayMuon.Size = new System.Drawing.Size(124, 20);
-            this.dtbNgayMuon.TabIndex = 3;
-            // 
             // UCtrlMuonTaiLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,6 +625,8 @@
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txbTenDocGia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtbNgayMuon.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtbNgayMuon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTaiLieuKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCtrlTaiLieuKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
@@ -650,7 +648,6 @@
             this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocGia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCtrlDocGia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docGiaDTOBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -664,8 +661,6 @@
             this.pnTheMuon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtbNgayMuon.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtbNgayMuon.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -707,7 +702,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colmaDocGia;
         private DevExpress.XtraGrid.Columns.GridColumn coltenDocGia;
         private DevExpress.XtraGrid.Columns.GridColumn colcmnd;
-        private System.Windows.Forms.BindingSource docGiaDTOBindingSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colmaTaiLieu;
         private DevExpress.XtraGrid.Columns.GridColumn coltenTaiLieu;
         private System.Windows.Forms.BindingSource taiLieuDTOBindingSource;

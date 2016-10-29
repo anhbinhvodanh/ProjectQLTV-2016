@@ -44,6 +44,7 @@
     <Compile Include="ChiTietMuonDAO.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DocGiaDAO.cs" />
+    <Compile Include="LoaiTinhTrangKhiTraDAO.cs" />
     <Compile Include="PhieuMuonDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -58,6 +59,7 @@
     </Compile>
     <Compile Include="TaiLieuDAO.cs" />
     <Compile Include="TheDocGiaDAO.cs" />
+    <Compile Include="ThuThuDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

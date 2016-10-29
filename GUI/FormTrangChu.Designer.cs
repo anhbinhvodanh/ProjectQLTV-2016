@@ -92,6 +92,7 @@
             this.barBtnMuonTaiLieu.Id = 3;
             this.barBtnMuonTaiLieu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtnMuonTaiLieu.LargeGlyph")));
             this.barBtnMuonTaiLieu.Name = "barBtnMuonTaiLieu";
+            this.barBtnMuonTaiLieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnMuonTaiLieu_ItemClick);
             // 
             // barBtnTraTaiLieu
             // 

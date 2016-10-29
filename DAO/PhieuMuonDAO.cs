@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,42 @@ namespace DAO
             db.getDBContext().SubmitChanges();
             maPhieuMuon = phieuMuon.maPhieuMuon;
             return maPhieuMuon;
+        }
+
+        /// <summary>
+        /// Kiểm tra thẻ mượn có tồn tại
+        /// </summary>
+        /// <param name="maTheMuon"></param>
+        /// <returns></returns>
+        public bool iThemMuonTonTai(int maTheMuon)
+        {
+            bool tonTai = false;
+            int count = (from PhieuMuon in db.getDBContext().PhieuMuons
+                         where !(from PhieuTra in db.getDBContext().PhieuTras
+                                select PhieuTra.maPhieumuon).Contains(PhieuMuon.maPhieuMuon)
+                         select PhieuMuon).Count();
+            if(count > 0)
+            {
+                tonTai = true;
+            }
+            return tonTai;
+        }
+
+        /// <summary>
+        /// Lay phieu muon
+        /// </summary>
+        /// <param name="maPhieuMuon"></param>
+        /// <returns></returns>
+        public PhieuMuonDTO layPhieuMuon(int maPhieuMuon)
+        {
+            var phieuMuon = db.getDBContext().PhieuMuons.Where(s => s.maPhieuMuon == maPhieuMuon).FirstOrDefault();
+            return new PhieuMuonDTO {
+                maDocGia = Convert.ToInt32(phieuMuon.maDocGia),
+                maThuThu = Convert.ToInt32(phieuMuon.maThuThu),
+                maPhieuMuon = Convert.ToInt32(phieuMuon.maPhieuMuon),
+                ngayMuon = Convert.ToDateTime(phieuMuon.ngayMuon),
+                ngayHetHan = Convert.ToDateTime(phieuMuon.ngayHetHan)
+            };
         }
     }
 }

@@ -126,6 +126,12 @@
     <Compile Include="UCtrl\UCtrlTaoTheDocGia.Designer.cs">
       <DependentUpon>UCtrlTaoTheDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCtrl\UCtrlTraTaiLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCtrl\UCtrlTraTaiLieu.Designer.cs">
+      <DependentUpon>UCtrlTraTaiLieu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormSQLConfig.resx">
       <DependentUpon>FormSQLConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,8 +165,13 @@
     <EmbeddedResource Include="UCtrl\UCtrlTaoTheDocGia.resx">
       <DependentUpon>UCtrlTaoTheDocGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCtrl\UCtrlTraTaiLieu.resx">
+      <DependentUpon>UCtrlTraTaiLieu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\DTO.DocGiaDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TaiLieuDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.TaiLieuKhiTraDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.TaiLieuTraDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

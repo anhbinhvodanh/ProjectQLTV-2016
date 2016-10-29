@@ -197,11 +197,27 @@ namespace GUI.UCtrl
 
         private void btnLuuTheMuon_Click(object sender, EventArgs e)
         {
-            new PhieuMuonBUS().taoPhieuMuon(maDocGiaMuon
+            DialogResult xacNhan = MessageBox.Show("Bạn muốn tạo thẻ mượn cho độc giả?"
+                , "Thông báo"
+                , MessageBoxButtons.YesNo
+                , MessageBoxIcon.Question);
+            if(xacNhan == DialogResult.Yes)
+            {
+                new PhieuMuonBUS().taoPhieuMuon(maDocGiaMuon
                 , Program.thuThu.maThuThu
                 , dtbNgayMuon.DateTime
                 , dtbNgayMuon.DateTime.AddDays(30)
                 , taiLieuMuon);
+
+                MessageBox.Show("Lưu thẻ mượn thành công."
+                    , "Thông báo"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+            }
+            else
+            {
+                
+            }
         }
     }
 }

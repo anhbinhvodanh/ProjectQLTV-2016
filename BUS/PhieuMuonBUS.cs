@@ -27,5 +27,25 @@ namespace BUS
                 , ngayTra);
             new ChiTietMuonDAO().taoChiTietMuon(maPhieuMuon, taiLieus);
         }
+
+        /// <summary>
+        /// Kiểm tra thẻ mượn có tồn tại
+        /// </summary>
+        /// <param name="maTheMuon"></param>
+        /// <returns></returns>
+        public bool iThemMuonTonTai(int maTheMuon)
+        {
+            return new PhieuMuonDAO().iThemMuonTonTai(maTheMuon);
+        }
+
+        /// <summary>
+        /// Lay phieu muon
+        /// </summary>
+        /// <param name="maPhieuMuon"></param>
+        /// <returns></returns>
+        public PhieuMuonDTO layPhieuMuon(int maPhieuMuon)
+        {
+            return new PhieuMuonDAO().layPhieuMuon(maPhieuMuon);
+        }
     }
 }
