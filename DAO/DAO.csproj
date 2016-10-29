@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietMuonDAO.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DocGiaDAO.cs" />
+    <Compile Include="PhieuMuonDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -54,6 +56,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyThuVienDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="TaiLieuDAO.cs" />
     <Compile Include="TheDocGiaDAO.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class TaiLieuDTO
+    public class ChiTietMuonDTO
     {
-        public int maTaiLieu { get; set; }
-        public string tenTaiLieu { get; set; }
-
+        int maChiTietMuon { get; set; }
+        int maTaiLieu { get; set; }
+        int maPhieuMuon { get; set; }
     }
 }

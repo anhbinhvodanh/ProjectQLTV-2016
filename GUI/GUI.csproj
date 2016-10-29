@@ -160,6 +160,7 @@
       <DependentUpon>UCtrlTaoTheDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\DTO.DocGiaDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.TaiLieuDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

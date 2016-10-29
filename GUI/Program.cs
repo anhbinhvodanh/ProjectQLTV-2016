@@ -11,6 +11,7 @@ namespace GUI
 {
     static class Program
     {
+        public static string sqlConnectString;
         public static ThuThuDTO thuThu = new ThuThuDTO
         {
             maThuThu = 1,
@@ -30,7 +31,7 @@ namespace GUI
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new FormSQLConfig());
+            Application.Run(new FormTrangChu());
         }
     }
 }

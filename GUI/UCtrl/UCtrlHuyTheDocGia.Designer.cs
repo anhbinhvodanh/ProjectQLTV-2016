@@ -102,7 +102,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(2, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(776, 355);
+            this.panelControl3.Size = new System.Drawing.Size(776, 371);
             this.panelControl3.TabIndex = 3;
             // 
             // splitContainerControl1
@@ -116,7 +116,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(772, 351);
+            this.splitContainerControl1.Size = new System.Drawing.Size(772, 367);
             this.splitContainerControl1.SplitterPosition = 369;
             this.splitContainerControl1.TabIndex = 2;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -127,7 +127,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(369, 351);
+            this.groupControl1.Size = new System.Drawing.Size(369, 367);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Độc giả còn khả dụng";
             // 
@@ -138,11 +138,12 @@
             this.gCtrlDocGia.Location = new System.Drawing.Point(2, 21);
             this.gCtrlDocGia.MainView = this.grdViewDocGia;
             this.gCtrlDocGia.Name = "gCtrlDocGia";
-            this.gCtrlDocGia.Size = new System.Drawing.Size(365, 328);
+            this.gCtrlDocGia.Size = new System.Drawing.Size(365, 344);
             this.gCtrlDocGia.TabIndex = 0;
             this.gCtrlDocGia.UseEmbeddedNavigator = true;
             this.gCtrlDocGia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdViewDocGia});
+            this.gCtrlDocGia.DoubleClick += new System.EventHandler(this.grdViewDocGia_DoubleClick);
             // 
             // grdViewDocGia
             // 
@@ -208,7 +209,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(391, 351);
+            this.groupControl2.Size = new System.Drawing.Size(391, 367);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Độc giả bị khóa";
             // 
@@ -218,7 +219,7 @@
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl4.Location = new System.Drawing.Point(43, 21);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(346, 328);
+            this.panelControl4.Size = new System.Drawing.Size(346, 344);
             this.panelControl4.TabIndex = 3;
             // 
             // gCtrlDocGiaBiHuyThe
@@ -228,11 +229,12 @@
             this.gCtrlDocGiaBiHuyThe.Location = new System.Drawing.Point(2, 2);
             this.gCtrlDocGiaBiHuyThe.MainView = this.grdViewDocGiaBiHuyThe;
             this.gCtrlDocGiaBiHuyThe.Name = "gCtrlDocGiaBiHuyThe";
-            this.gCtrlDocGiaBiHuyThe.Size = new System.Drawing.Size(342, 324);
+            this.gCtrlDocGiaBiHuyThe.Size = new System.Drawing.Size(342, 340);
             this.gCtrlDocGiaBiHuyThe.TabIndex = 2;
             this.gCtrlDocGiaBiHuyThe.UseEmbeddedNavigator = true;
             this.gCtrlDocGiaBiHuyThe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdViewDocGiaBiHuyThe});
+            this.gCtrlDocGiaBiHuyThe.DoubleClick += new System.EventHandler(this.grdViewDocGiaBiHuyThe_DoubleClick);
             // 
             // grdViewDocGiaBiHuyThe
             // 
@@ -297,7 +299,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl5.Location = new System.Drawing.Point(2, 21);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(41, 328);
+            this.panelControl5.Size = new System.Drawing.Size(41, 344);
             this.panelControl5.TabIndex = 2;
             // 
             // btnMoKhoaHet
@@ -316,6 +318,7 @@
             superToolTip1.Items.Add(toolTipItem1);
             this.btnMoKhoaHet.SuperTip = superToolTip1;
             this.btnMoKhoaHet.TabIndex = 2;
+            this.btnMoKhoaHet.Click += new System.EventHandler(this.btnMoKhoaHet_Click_1);
             // 
             // panelControl1
             // 
@@ -325,22 +328,22 @@
             this.panelControl1.Controls.Add(this.pictureEdit1);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(2, 357);
+            this.panelControl1.Location = new System.Drawing.Point(2, 373);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(776, 41);
+            this.panelControl1.Size = new System.Drawing.Size(776, 25);
             this.panelControl1.TabIndex = 2;
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(20, 7);
+            this.pictureEdit1.Location = new System.Drawing.Point(20, 3);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureEdit1.Size = new System.Drawing.Size(35, 35);
+            this.pictureEdit1.Size = new System.Drawing.Size(20, 20);
             this.pictureEdit1.TabIndex = 1;
             // 
             // labelControl1
@@ -348,7 +351,7 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.labelControl1.LineVisible = true;
-            this.labelControl1.Location = new System.Drawing.Point(62, 15);
+            this.labelControl1.Location = new System.Drawing.Point(46, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(596, 16);
             this.labelControl1.TabIndex = 0;

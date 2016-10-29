@@ -138,5 +138,10 @@ namespace GUI
                 loadThongTin();
             }
         }
+
+        private void btnMoKhoaHet_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
