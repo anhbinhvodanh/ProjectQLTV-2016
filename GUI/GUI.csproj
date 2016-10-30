@@ -169,6 +169,7 @@
       <DependentUpon>UCtrlTraTaiLieu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\DTO.DocGiaDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.LoaiTinhTrangKhiTraDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TaiLieuDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TaiLieuKhiTraDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TaiLieuTraDTO.datasource" />

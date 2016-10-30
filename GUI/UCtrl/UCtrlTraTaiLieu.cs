@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace GUI.UCtrl
 {
     public partial class UCtrlTraTaiLieu : UserControl
     {
+        private int maPhieuMuon;
+        private List<TaiLieuKhiTraDTO> taiLieus;
         public UCtrlTraTaiLieu()
         {
             InitializeComponent();
@@ -21,8 +25,23 @@ namespace GUI.UCtrl
 
         private void khoaThongTinMuon()
         {
+            btnTimKiem.Enabled = true;
+            txbMaThe.Enabled = true;
+
+            txbMaThe.Text = "";
+            txbMaThe.Focus();
+            txbTenThuThu.Text = "";
+            txbTenDocGia.Text = "";
+            dtbNgayMuon.Text = "";
+            dtbNgayTra.Text = "";
+            txbMaDocGia.Text = "";
+
+            gCtrlTaiLieuMuon.DataSource = null;
+
             pnDanhSachTaiLieuMuon.Enabled = false;
             pnThongTinThe.Enabled = false;
+
+
         }
 
         
@@ -56,8 +75,12 @@ namespace GUI.UCtrl
         /// </summary>
         private void kiemTraTheMuon()
         {
-            int maTheMuon = Int32.Parse(txbMaThe.Text);
-            bool tonTai = new PhieuMuonBUS().iThemMuonTonTai(maTheMuon);
+            btnTimKiem.Enabled = false;
+            txbMaThe.Enabled = false;
+
+            maPhieuMuon = Int32.Parse(txbMaThe.Text);
+            bool tonTai = new PhieuMuonBUS().iThemMuonTonTai(maPhieuMuon);
+           
             if (tonTai)
             {
                 //Lay thong tin the muon
@@ -69,6 +92,7 @@ namespace GUI.UCtrl
                     , "Thông báo"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Error);
+                khoaThongTinMuon();
             }
         }
 
@@ -79,9 +103,10 @@ namespace GUI.UCtrl
         {
             pnThongTinThe.Enabled = true;
             pnDanhSachTaiLieuMuon.Enabled = true;
+            btnSave.Enabled = true;
 
-            int maTheMuon = Int32.Parse(txbMaThe.Text);
-            PhieuMuonDTO phieuMuon = new PhieuMuonBUS().layPhieuMuon(maTheMuon);
+            maPhieuMuon = Int32.Parse(txbMaThe.Text);
+            PhieuMuonDTO phieuMuon = new PhieuMuonBUS().layPhieuMuon(maPhieuMuon);
             DocGiaDTO docGia = new DocGiaBUS().layDocGia(phieuMuon.maDocGia);
             ThuThuDTO thuThu = new ThuThuBUS().layThuThu(phieuMuon.maThuThu);
 
@@ -90,12 +115,71 @@ namespace GUI.UCtrl
             dtbNgayMuon.DateTime = phieuMuon.ngayMuon;
             dtbNgayTra.DateTime = phieuMuon.ngayHetHan;
             txbMaDocGia.Text = docGia.maDocGia.ToString();
+
+            taiLieus = new TaiLieuBUS().getDsTaiLieuThuocPhieuMuon(maPhieuMuon);
+
+            gCtrlTaiLieuMuon.DataSource = taiLieus;
+
+            List<LoaiTinhTrangKhiTraDTO> loaiTinhTrang = new LoaiTinhTrangKhiTraBUS().layDanhSachLoaiTinhTrang();
+
+            repositoryItemLookUpEditTinhTrang.DataSource = loaiTinhTrang;
+
            
+
         }
 
         private void btnNhapMoi_Click(object sender, EventArgs e)
         {
             khoaThongTinMuon();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DialogResult xacNhan = MessageBox.Show(String.Format("Bạn muốn lưu thông tin xác nhận trả cho phiếu mượn {0} ?", maPhieuMuon)
+                , "Thông báo"
+                , MessageBoxButtons.YesNo
+                , MessageBoxIcon.Question);
+            if(xacNhan == DialogResult.Yes)
+            {
+                luuXacNhanTra();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void luuXacNhanTra()
+        {
+            new PhieuTraBUS().luuPhieuTra(maPhieuMuon
+                , Program.thuThu.maThuThu
+                , DateTime.Now
+                , taiLieus);
+
+            MessageBox.Show("Lưu thẻ trả thành công."
+                    , "Thông báo"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+
+            btnSave.Enabled = false;
+        }
+
+        private void btnInTheTra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdTaiLieuMuon_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            int index = grdTaiLieuMuon.GetSelectedRows()[0];
+            taiLieus[index].maTinhTrang = Convert.ToInt32(e.Value);
+        }
+
+       
+
+        private void grdTaiLieuMuon_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            
         }
     }
 }

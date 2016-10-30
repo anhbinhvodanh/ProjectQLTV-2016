@@ -48,6 +48,7 @@ namespace DAO
             int count = (from PhieuMuon in db.getDBContext().PhieuMuons
                          where !(from PhieuTra in db.getDBContext().PhieuTras
                                 select PhieuTra.maPhieumuon).Contains(PhieuMuon.maPhieuMuon)
+                         where PhieuMuon.maPhieuMuon == maTheMuon
                          select PhieuMuon).Count();
             if(count > 0)
             {

@@ -35,5 +35,26 @@ namespace DAO
                            };
             return taiLieus.ToList();
         }
+
+        /// <summary>
+        /// Lấy danh sách tài liệu của phiếu mượn
+        /// </summary>
+        /// <param name="maPhieuMuon"></param>
+        /// <returns></returns>
+        public List<TaiLieuKhiTraDTO> getDsTaiLieuThuocPhieuMuon(int maPhieuMuon)
+        {
+            var taiLieuMuon = from TaiLieu in db.getDBContext().TaiLieus
+                              from ChiTietMuon in db.getDBContext().ChiTietMuons
+                              where (ChiTietMuon.maPhieuMuon == maPhieuMuon)
+                              where (ChiTietMuon.maTaiLieu == TaiLieu.maTaiLieu)
+                              select new TaiLieuKhiTraDTO
+                              {
+                                  maTaiLieu = TaiLieu.maTaiLieu,
+                                  tenTaiLieu = TaiLieu.tenTaiLieu,
+                                  maChiTietMuon = ChiTietMuon.maChiTietMuon,
+                                  maTinhTrang = 1
+                              };
+            return taiLieuMuon.ToList();
+        }
     }
 }

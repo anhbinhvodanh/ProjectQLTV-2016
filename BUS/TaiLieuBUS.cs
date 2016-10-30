@@ -18,5 +18,15 @@ namespace BUS
         {
             return new TaiLieuDAO().getDsTaiLieuHienCo();
         }
+
+        /// <summary>
+        /// Lấy danh sách tài liệu của phiếu mượn
+        /// </summary>
+        /// <param name="maPhieuMuon"></param>
+        /// <returns></returns>
+        public List<TaiLieuKhiTraDTO> getDsTaiLieuThuocPhieuMuon(int maPhieuMuon)
+        {
+            return new TaiLieuDAO().getDsTaiLieuThuocPhieuMuon(maPhieuMuon);
+        }
     }
 }

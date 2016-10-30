@@ -12,5 +12,7 @@ namespace DTO
         public string tenTaiLieu { get; set; }
         public int maTinhTrang { get; set; }
         public string tenTinhTrang { get; set; }
+
+        public int maChiTietMuon { get; set; }
     }
 }

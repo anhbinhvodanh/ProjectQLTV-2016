@@ -43,6 +43,7 @@
     <Compile Include="DocGiaBUS.cs" />
     <Compile Include="LoaiTinhTrangKhiTraBUS.cs" />
     <Compile Include="PhieuMuonBUS.cs" />
+    <Compile Include="PhieuTraBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiLieuBUS.cs" />
     <Compile Include="ThuThuBUS.cs" />

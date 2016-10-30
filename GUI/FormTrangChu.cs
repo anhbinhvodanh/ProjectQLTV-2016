@@ -24,9 +24,7 @@ namespace GUI
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            uCtrlTraTaiLieu = new UCtrlTraTaiLieu();
-            uCtrlTraTaiLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            tabNTrangChu.Controls.Add(uCtrlTraTaiLieu);
+           
         }
 
         private void barBtnThemDocGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -39,11 +37,10 @@ namespace GUI
         /// </summary>
         private void showUCtrlTaoTheDocGia()
         {
-            if(uCtrlTaoTheDocGia == null)
-            {
+            
                 uCtrlTaoTheDocGia = new UCtrlTaoTheDocGia();
                 uCtrlTaoTheDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
-            }
+           
 
             tabNTrangChu.Controls.Clear();
             tabNTrangChu.Controls.Add(uCtrlTaoTheDocGia);
@@ -51,11 +48,10 @@ namespace GUI
 
         private void barBtnHuyDocGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (uCtrlHuyTheDocGia == null)
-            {
+           
                 uCtrlHuyTheDocGia = new UCtrlHuyTheDocGia();
                 uCtrlHuyTheDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
-            }
+           
 
             tabNTrangChu.Controls.Clear();
             tabNTrangChu.Controls.Add(uCtrlHuyTheDocGia);
@@ -63,13 +59,22 @@ namespace GUI
 
         private void barBtnMuonTaiLieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(uCtrlMuonTaiLieu == null)
-            {
+            
                 uCtrlMuonTaiLieu = new UCtrlMuonTaiLieu();
                 uCtrlMuonTaiLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            }
+           
             tabNTrangChu.Controls.Clear();
             tabNTrangChu.Controls.Add(uCtrlMuonTaiLieu);
+        }
+
+        private void barBtnTraTaiLieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+                uCtrlTraTaiLieu = new UCtrlTraTaiLieu();
+                uCtrlTraTaiLieu.Dock = System.Windows.Forms.DockStyle.Fill;
+            
+            tabNTrangChu.Controls.Clear();
+            tabNTrangChu.Controls.Add(uCtrlTraTaiLieu);
         }
     }
 }

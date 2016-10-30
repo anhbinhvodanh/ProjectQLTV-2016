@@ -101,6 +101,7 @@
             this.barBtnTraTaiLieu.Id = 4;
             this.barBtnTraTaiLieu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtnTraTaiLieu.LargeGlyph")));
             this.barBtnTraTaiLieu.Name = "barBtnTraTaiLieu";
+            this.barBtnTraTaiLieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnTraTaiLieu_ItemClick);
             // 
             // ribbonPage1
             // 
